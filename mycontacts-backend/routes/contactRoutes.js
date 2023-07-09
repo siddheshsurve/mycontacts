@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const {getContact} = require("../controllers/contactController")
 
 // router.route("/api/contacts", (req, res) => {
 //     res.status(200).json({message : "Get all contacts"});
 // })
 
-router.route("/").get((req, res) => {
-    res.status(200).json({ message : "Get all contacts" });
-});
+router.route("/").get(getContact);
 
 router.route("/").post((req, res) => {
     res.status(200).json({ message : "Create Contact" });
